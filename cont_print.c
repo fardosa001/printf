@@ -7,12 +7,10 @@
  */
 int cont_print(char c)
 {
-	if (c != '\0' && c != '\n')
+	if (c != '\0')
 	{
 		write(1, &c, 1);
 		return (1);
 	}
-	if (c == '\n')
-		write(1, &c, 1);
 	return (0);
 }
