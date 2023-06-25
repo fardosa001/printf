@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	check_for_error(format);
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
