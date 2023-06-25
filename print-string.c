@@ -6,9 +6,9 @@
  */
 int _print_string(va_list ap)
 {
-	int i 0;
+	int i = 0;
 	char c;
-	char *str = va_arg(ap, char);
+	char *str = va_arg(ap, char*);
 	int lenstr = _strlen(str);
 
 	while (i < lenstr)

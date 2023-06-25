@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	char c;
 	char new_line = '\n';
 
-	op_t 0p[] = {
+	op_t op[] = {
 	{'c', _print_char},
 	{'s', _print_string},
 	{'\0', NULL}
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	int num_chars = 0;
 
 	va_start(ap, format);
-	while (format[i] != '%')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{

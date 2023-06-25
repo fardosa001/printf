@@ -8,8 +8,8 @@
 int main(void)
 {
 	char c = 'a';
-	char *str = 'boy';
+	char *str = "boy";
 
-	 _printf("kelvin is %c good %s", c str);
+	 _printf("kelvin is %c good %s", c, str);
 	return (0);
 }
