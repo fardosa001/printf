@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 			if (format[i + 1] == op[j].c)
 			{
-				num_chars = num_chars + op[j].f(ap);
+				num_chars += op[j].f(ap);
 				i++;
 			}
 			j++;
