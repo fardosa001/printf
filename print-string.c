@@ -11,9 +11,6 @@ int _print_string(va_list ap)
 
 	if (str == NULL)
 		str = "(null)";
-	if (str[0] == '\0')
-		return (-1);
 	lenstr = _strlen(str);
-
 	return (write(1, str, lenstr));
 }

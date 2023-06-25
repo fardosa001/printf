@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - produces output according to a format.
  * @format: a character string composed of zero or more directives.
@@ -7,7 +8,6 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char new_line = '\n';
 	op_t op[] = {
 	{'c', _print_char},
 	{'s', _print_string},
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -27,21 +27,19 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == op[j].c)
 				{
-					num_chars += op[j].f(ap);
+					num_chars = num_chars + op[j].f(ap);
 					i += 2;
 				}
 				j++;
 			}
-			if (format[i + 1] == '%')
+			if (format[i] == '%' && format[i + 1] == '%')
 			{
-				num_chars += _print_percent();
+				num_chars = num_chars + _print_percent();
 				i += 2;
 			}
 		}
-		num_chars += cont_print(format[i]);
-		i++;
+		num_chars = num_chars + cont_print(format[i]);
 	}
 	va_end(ap);
-	write(1, &new_line, 1);
 	return (num_chars);
 }
