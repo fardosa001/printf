@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 			{
 				num_chars = num_chars + _print_percent();
 				i += 2;
-			}
+			};
 		}
 		num_chars = num_chars + cont_print(format[i]);
 	}
