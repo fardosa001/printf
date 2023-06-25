@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	char c, new_line = '\n';
+	char new_line = '\n';
 	op_t op[] = {
 	{'c', _print_char},
 	{'s', _print_string},
@@ -25,20 +25,20 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (op[j].c != '\0')
 			{
-			if (format[i + 1] == op[j].c)
-			{
-				num_chars += op[j].f(ap);
-				i++;
+				if (format[i + 1] == op[j].c)
+				{
+					num_chars += op[j].f(ap);
+					i += 2;
+				}
+				j++;
 			}
-			j++;
+			if (format[i + 1] == '%')
+			{
+				num_chars += _print_percent();
+				i += 2;
+			}
 		}
-	}
-		else
-		{
-			c = format[i];
-			write(1, &c, 1);
-			num_chars++;
-		}
+		num_chars += cont_print(format[i]);
 		i++;
 	}
 	va_end(ap);
