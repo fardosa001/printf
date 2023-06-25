@@ -22,4 +22,5 @@ int _print_string(va_list ap);
 int _strlen(char *str);
 int _print_percent(void);
 int cont_print(char c);
+void check_for_error(const char *format);
 #endif
