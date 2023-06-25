@@ -9,8 +9,14 @@ int _print_string(va_list ap)
 	int i = 0;
 	char c;
 	char *str = va_arg(ap, char*);
-	int lenstr = _strlen(str);
+	int lenstr = 0;
 
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
+	lensstr = _strlen(str);
 	while (i < lenstr)
 	{
 		c = str[i];
