@@ -2,7 +2,6 @@
 #define MAIN_H
 #include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdarg.h>
 /**
  * struct my_struct - Struct to hold special chars and function pointers

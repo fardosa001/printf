@@ -11,7 +11,7 @@ int _print_string(va_list ap)
 	char *str = va_arg(ap, char*);
 	int lenstr = 0;
 
-	lensstr = _strlen(str);
+	lenstr = _strlen(str);
 	while (i < lenstr)
 	{
 		c = str[i];
