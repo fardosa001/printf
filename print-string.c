@@ -9,7 +9,7 @@ int _print_string(va_list ap)
 	int i 0;
 	char c;
 	char *str = va_arg(ap, char);
-	int lenstr = strlen(str);
+	int lenstr = _strlen(str);
 
 	while (i < lenstr)
 	{
