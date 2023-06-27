@@ -1,6 +1,5 @@
 #include "main.h"
-#include <stdio.h>
-int check_spec(const char *format, va_list ap, op_t *op);
+#include "main.h"
 
 /**
  * _printf - produces output according to a format.
@@ -10,20 +9,15 @@ int check_spec(const char *format, va_list ap, op_t *op);
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	op_t op[] = {
-<<<<<<< HEAD
-	{'c', _print_char},
-	{'s', _print_string},
-	{'i', _print_int},
-	{'d', _print_int},
-	{0, NULL}
-=======
-	{"c", _print_char},
-	{"s", _print_string},
-	{NULL, NULL}
->>>>>>> a7371a43c1ba82d0eda55c1947937f2596b7c22b
-	};
 	int num_chars = 0;
+
+	op_t op[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{"i", _print_int},
+		{"d", _print_int},
+		{NULL, NULL}
+	};
 
 	if (format == NULL)
 		return (-1);
