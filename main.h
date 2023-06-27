@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 /**
  * struct my_struct - Struct to hold special chars and function pointers
  * @c: hold special characters
@@ -21,8 +20,6 @@ int _printf(const char *format, ...);
 int _print_char(va_list ap);
 int _print_string(va_list ap);
 int _strlen(char *str);
-int _print_percent(void);
-int cont_print(char c);
 int _print_int(va_list ap);
 int _putchar(char c);
 #endif
