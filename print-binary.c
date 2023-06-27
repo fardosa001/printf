@@ -12,7 +12,7 @@ int printBin(va_list ap)
 	unsigned int holder = num;
 	int *ptr, i = 0;
 
-	while (num > 0)
+	while (num / 2 > 0)
 	{
 		num /= 2;
 		num_divided++;
