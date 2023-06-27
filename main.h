@@ -13,7 +13,7 @@
  */
 typedef struct my_struct
 {
-	char c;
+	char *c;
 	int (*f)(va_list);
 } op_t;
 
@@ -23,6 +23,9 @@ int _print_string(va_list ap);
 int _strlen(char *str);
 int _print_percent(void);
 int cont_print(char c);
+<<<<<<< HEAD
 int _print_int(va_list ap);
+=======
+>>>>>>> a7371a43c1ba82d0eda55c1947937f2596b7c22b
 int _putchar(char c);
 #endif

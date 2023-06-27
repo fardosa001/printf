@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdio.h>
+int check_spec(const char *format, va_list ap, op_t *op);
+
 /**
  * _printf - produces output according to a format.
  * @format: a character string composed of zero or more directives.
@@ -9,39 +11,75 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	op_t op[] = {
+<<<<<<< HEAD
 	{'c', _print_char},
 	{'s', _print_string},
 	{'i', _print_int},
 	{'d', _print_int},
 	{0, NULL}
+=======
+	{"c", _print_char},
+	{"s", _print_string},
+	{NULL, NULL}
+>>>>>>> a7371a43c1ba82d0eda55c1947937f2596b7c22b
 	};
-	int i = 0, j = 0, num_chars = 0;
+	int num_chars = 0;
 
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] == '%')
-		{
-			j = 0;
-			while (op[j].c != '\0')
-			{
-				if (format[i + 1] == op[j].c)
-				{
-					num_chars = num_chars + op[j].f(ap);
-					i += 2;
-				}
-				j++;
-			}
-			if (format[i] == '%' && format[i + 1] == '%')
-			{
-				num_chars = num_chars + _print_percent();
-				i += 2;
-			};
-		}
-		num_chars = num_chars + cont_print(format[i]);
-	}
+	num_chars = check_spec(format, ap, op);
 	va_end(ap);
 	return (num_chars);
+}
+
+/**
+ * check_spec - checks for specifier
+ * @format: first param
+ * @ap:second param
+ * @op: third param
+ *
+ * Return: int
+ */
+int check_spec(const char *format, va_list ap, op_t *op)
+{
+	char letters;
+	int num_char = 0;
+	int i = 0, j = 0;
+
+	letters = format[i];
+	while (letters != '\0')
+	{
+		if (letters == '%')
+		{
+			j = 0;
+			i++;
+			letters = format[i];
+			while (op[j].c != NULL && letters != *(op[j].c))
+			{
+				j++;
+			}
+			if (op[j].c != NULL)
+			{
+				num_char = num_char + op[j].f(ap);
+			}
+			else
+			{
+				if (letters == '\0')
+				{
+					return (-1);
+				}
+				if (letters != '%')
+					num_char += _putchar('%');
+				num_char += _putchar(letters);
+			}
+		}
+		else
+		{
+			num_char += _putchar(letters);
+		}
+		i++;
+		letters = format[i];
+	}
+	return (num_char);
 }

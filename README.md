@@ -17,4 +17,8 @@
 
 **strlen.c** - *Returns length of a string*
 
+<<<<<<< HEAD
 **print-int.c** - *Handles the %d and %i specifier and prints out an integer*
+=======
+**_putchar.c** - *Prints characters to stdout*
+>>>>>>> a7371a43c1ba82d0eda55c1947937f2596b7c22b
