@@ -36,3 +36,7 @@
 **print-binary.c** - *Function to print int converted to binary*
  
 **putchar.c** - *Prints characters to stdout*
+
+**print-unsigned.c** - *Handled the specifier %u and  prints unsigned integer to stdout**
+
+**print-octal.c** - *Handles the specifier %o and prints number in base 8*

@@ -23,4 +23,6 @@ int _strlen(char *str);
 int _print_int(va_list ap);
 int _putchar(char c);
 int printBin(va_list ap);
+int printUnsigned(va_list ap);
+int printOctal(va_list ap);
 #endif
