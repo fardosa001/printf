@@ -12,7 +12,7 @@
  */
 typedef struct my_struct
 {
-	char c;
+	char *c;
 	int (*f)(va_list);
 } op_t;
 
