@@ -1,6 +1,6 @@
 #include "main.h"
-int check_spec(const char *format,va_list ap, op_t *op);
-
+#include <stdio.h>
+int check_spec(const char *format, va_list ap, op_t *op);
 /**
  * _printf - produces output according to a format.
  * @format: a character string composed of zero or more directives.
