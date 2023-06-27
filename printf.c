@@ -1,5 +1,5 @@
 #include "main.h"
-#include "main.h"
+int check_spec(const char *format,va_list ap, op_t *op);
 
 /**
  * _printf - produces output according to a format.
