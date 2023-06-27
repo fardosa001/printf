@@ -16,3 +16,5 @@
 **printf.c** - *Handles the format passed to _printf fumction and call the required function*
 
 **strlen.c** - *Returns length of a string*
+
+**_putchar.c** - *Prints characters to stdout*
