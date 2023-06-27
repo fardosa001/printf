@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 	op_t op[] = {
 	{'c', _print_char},
 	{'s', _print_string},
+	{'d', _convert_number},
+	{'i', _convert_number},
 	{0, NULL}
 	};
 	int i = 0, j = 0, num_chars = 0;
