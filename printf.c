@@ -51,7 +51,7 @@ int check_spec(const char *format, va_list ap, op_t *op)
 			{
 				j++;
 			}
-			if(op[j].c != NULL)
+			if (op[j].c != NULL)
 			{
 				num_char = num_char + op[j].f(ap);
 			}
