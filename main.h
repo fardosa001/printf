@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 /**
  * struct my_struct - Struct to hold special chars and function pointers
  * @c: hold special characters
