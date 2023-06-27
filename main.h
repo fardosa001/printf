@@ -17,7 +17,6 @@ typedef struct my_struct
 } op_t;
 
 int _printf(const char *format, ...);
-int check_spec(const char *format,va_list ap, op_t *op);
 int _print_char(va_list ap);
 int _print_string(va_list ap);
 int _strlen(char *str);
