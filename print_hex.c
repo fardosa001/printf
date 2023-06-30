@@ -17,7 +17,7 @@ int printHexalow(va_list ap)
 		num /= 16;
 		num_divided++;
 	}
-
+	num_divided++;
 	ptr = malloc(num_divided * sizeof(*ptr));
 	if (ptr == NULL)
 
@@ -60,6 +60,7 @@ int printHexaup(va_list ap)
 		num /= 16;
 		num_divided++;
 	}
+	num_divided++;
 	ptr = malloc(num_divided * sizeof(*ptr));
 	if (ptr == NULL)
 		return (0);
