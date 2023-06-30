@@ -25,4 +25,6 @@ int _putchar(char c);
 int printBin(va_list ap);
 int printUnsigned(va_list ap);
 int printOctal(va_list ap);
+int printHexalow(va_list ap);
+int printHexaup(va_list ap);
 #endif

@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		{"b", printBin},
 		{"u", printUnsigned},
 		{"o", printOctal},
+		{"x", printHexalow},
+		{"X", printHexaup},
 		{NULL, NULL}
 	};
 
